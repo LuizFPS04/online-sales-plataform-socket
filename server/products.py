@@ -20,21 +20,3 @@ class Catalog:
     
     def select_product(self, code):
         return self.products_list[code]
-    
-
-if __name__ == "__main__":
-    catalog = Catalog()
-    
-    # Adicionando produtos
-    catalog.add_product(Product("Laptop", 1000))
-    catalog.add_product(Product("Smartphone", 500))
-    
-    # Mostrando o catálogo
-    catalog.show_catalog()
-    
-    # Selecionando um produto
-    try:
-        selected_product = catalog.select_product(1)
-        print(f'Selected Product: {selected_product.name} - ${selected_product.price}')
-    except IndexError as e:
-        print(e)
