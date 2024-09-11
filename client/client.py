@@ -66,6 +66,8 @@ while show_list.lower() in ["show cars", "show", "list cars", "list", "show car"
             elif "Counterproposal" in server_response:
                 # Pergunta ao cliente se ele aceita a contraproposta
                 response_client = input("Do you accept the counterproposal? (yes/no): ").lower()
+                while (not (response_client in ["yes", "sim", "ss", "si", "s", "no", "não", "nn", "nao", "n"])):
+                    response_client = input("Do you accept the counterproposal? (yes/no): ").lower()
                 
                 # Envia a resposta do cliente ao servidor (aceita ou não a contraproposta)
                 client_socket.send(response_client.encode())
